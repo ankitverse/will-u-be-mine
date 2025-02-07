@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <style>
+            body{
+                display: block;
+            }
+            
+            .footer{
+                position: absolute;
+                bottom: 0px;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="bigContainer">
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Do you wanna go out with me?</h1>
+                <h1 class = "header_text">Will you be my valentine, <sapn id="partner-name"></sapn>💖 ?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="/image/love_1.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                
+                <script>
+                    let urlparams = new URLSearchParams(window.location.search);
+                    let name = urlparams.get('love');
+                    let spann = document.getElementById("partner-name");
+                    spann.innerHTML = name;
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                </script> 
+            </div>
+            
+        </div>
+        </div>
+       <div class="footer">
+        <a href="https://instagram.com/the_eishu">Developed With ❤️ By Ankittt</a>
+       </div>
+    </body> 
+</html>
